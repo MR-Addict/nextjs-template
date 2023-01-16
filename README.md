@@ -3,14 +3,26 @@
 ## 1. Custom Packages
 
 - [x] Prettier
-- [x] Nextauth
-- [ ] Turbopack
+- [ ] Nextauth
 - [x] Typescript
+- [ ] Turbopack
 - [x] Tailwindcss
-- [x] Mongodb Altas
+- [ ] Mongodb Altas
 
 ## 2. Custom Components
 
-- [x] Scroll To Top
-- [x] Popup
-- [x] Tooltip
+- [ ] Scroll To Top
+- [ ] Popup
+- [ ] Tooltip
+
+## 3. Features
+
+- [x] src folder
+- [ ] Login
+- [ ] Mongodb
+
+## 3. How to Use
+
+```bash
+npx create-next-app@latest -e https://github.com/MR-Addict/nextjs-template
+```
