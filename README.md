@@ -8,6 +8,7 @@
 - [ ] Turbopack
 - [x] Tailwindcss
 - [x] Mongodb Altas
+- [x] bcryptjs(Replacing bcrypt used on Server Side)
 
 ## 2. Custom Components
 
