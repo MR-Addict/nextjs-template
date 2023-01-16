@@ -24,6 +24,14 @@
 
 ## 3. How to Use
 
+add `.env` file:
+
+```env
+NEXTAUTH_SECRET="8GYrPDgw9wj5213UHWIm"
+NEXTAUTH_URL="https://your.domain.com/"
+MONGODB_URI="mongodb://username:password@mongodb0.example.com:27017/"
+```
+
 ```bash
 npx create-next-app@latest -e https://github.com/MR-Addict/nextjs-template
 ```

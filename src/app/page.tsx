@@ -7,7 +7,7 @@ export default async function Page() {
   const session = await unstable_getServerSession(authOptions);
 
   return (
-    <div className='frame w-full flex flex-col items-center'>
+    <div className='frame mt-44 w-full flex flex-col items-center justify-center'>
       <Login session={session} />
     </div>
   );

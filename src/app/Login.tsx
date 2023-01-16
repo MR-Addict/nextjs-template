@@ -3,7 +3,11 @@
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 
+import { usePopupContext } from "../components";
+
 export default function Login({ session }: { session: Session | null }) {
+  const { popup } = usePopupContext();
+
   return (
     <>
       {session ? (
@@ -19,6 +23,12 @@ export default function Login({ session }: { session: Session | null }) {
           Login
         </button>
       )}
+      <button
+        onClick={() => popup({ status: false, message: "Login success" })}
+        className='bg-black text-white rounded-md py-1 px-2'
+      >
+        Popup
+      </button>
     </>
   );
 }
