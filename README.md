@@ -3,11 +3,11 @@
 ## 1. Custom Packages
 
 - [x] Prettier
-- [ ] Nextauth
+- [x] Nextauth
 - [x] Typescript
 - [ ] Turbopack
 - [x] Tailwindcss
-- [ ] Mongodb Altas
+- [x] Mongodb Altas
 
 ## 2. Custom Components
 
@@ -18,8 +18,8 @@
 ## 3. Features
 
 - [x] src folder
-- [ ] Login
-- [ ] Mongodb
+- [x] Login
+- [x] Mongodb
 
 ## 3. How to Use
 
