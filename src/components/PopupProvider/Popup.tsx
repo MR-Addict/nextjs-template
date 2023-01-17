@@ -14,7 +14,7 @@ export default function Popup({
   return (
     <div
       className={`w-full z-10 fixed flex flex-col items-center -top-20 left-[50%] translate-x-[-50%] duration-500 ${
-        isPopup ? "translate-y-32 md:translate-y-44" : "translate-y-0"
+        isPopup ? "translate-y-32" : "translate-y-0"
       }`}
     >
       {popupData.status ? (

@@ -21,7 +21,7 @@ export default function NormalLinks() {
       <div className='flex flex-col gap-10 items-start'>
         <Link href='/' className='flex flex-row items-end justify-center gap-2'>
           <Image src={logo} width={40} height={40} alt='logo' />
-          <h1 className='dark:text-white text-2xl font-bold italic'>Linktree</h1>
+          <h1 className='dark:text-white text-2xl font-bold italic'>Nextjs Template</h1>
         </Link>
       </div>
     </div>

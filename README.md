@@ -14,13 +14,14 @@
 
 - [x] Popup
 - [x] Error
+- [x] Footer
 - [x] Loading
-- [ ] Tooltip
+- [x] Tooltip
 - [x] ScrollToTop
 
 ## 3. Features
 
-- [x] src folder
+- [x] `src` folder
 - [x] Login
 - [x] Mongodb
 
