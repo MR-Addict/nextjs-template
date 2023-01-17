@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import { NextauthProvider, ScrollToTop, PopupContextProvider } from "../components";
+import { NextauthProvider, ScrollToTop, PopupContextProvider, Footer } from "../components";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,6 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <NextauthProvider>
           <PopupContextProvider>
             {children}
+            <Footer />
             <ScrollToTop />
           </PopupContextProvider>
         </NextauthProvider>

@@ -4,7 +4,7 @@ export default function Head() {
       <title>Nextjs Custom Template</title>
       <meta content='width=device-width, initial-scale=1' name='viewport' />
       <meta name='description' content='Nextjs Custom Template' />
-      <link rel='icon' href='/favicon.ico' />
+      <link rel='icon' href='/favicon.png' />
     </>
   );
 }

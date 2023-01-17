@@ -8,13 +8,15 @@
 - [ ] Turbopack
 - [x] Tailwindcss
 - [x] Mongodb Altas
-- [x] bcryptjs(Replacing bcrypt used on Server Side)
+- [x] Bcryptjs(Replacing bcrypt used on Server Side)
 
 ## 2. Custom Components
 
-- [ ] Scroll To Top
-- [ ] Popup
+- [x] Popup
+- [x] Error
+- [x] Loading
 - [ ] Tooltip
+- [x] ScrollToTop
 
 ## 3. Features
 
@@ -31,6 +33,8 @@ NEXTAUTH_SECRET="8GYrPDgw9wj5213UHWIm"
 NEXTAUTH_URL="https://your.domain.com/"
 MONGODB_URI="mongodb://username:password@mongodb0.example.com:27017/"
 ```
+
+Creat Next.js app with custom template:
 
 ```bash
 npx create-next-app@latest -e https://github.com/MR-Addict/nextjs-template

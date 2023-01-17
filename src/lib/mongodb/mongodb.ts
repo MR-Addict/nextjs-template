@@ -13,7 +13,7 @@ class Mongodb {
         .aggregate([{ $match: { username } }, { $addFields: { _id: { $convert: { input: "$_id", to: "string" } } } }])
         .next();
 
-      if (!user) return { status: false, message: "Username not exists" };
+      if (!user) return { status: false, message: "User not exists" };
 
       const isMatched = await compare(password, user.password);
       if (!isMatched) return { status: false, message: "Password incorrect!" };
@@ -22,7 +22,7 @@ class Mongodb {
       return { status: true, data: user };
     } catch (error) {
       console.error(error);
-      return { status: false, message: "Error occurred when communicate with mongodb!" };
+      return { status: false, message: "Error occurred while communicate with mongodb!" };
     }
   }
 }
