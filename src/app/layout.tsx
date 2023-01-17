@@ -6,7 +6,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <head />
-      <body className='min-h-screen flex flex-col items-center justify-between'>
+      <body className='dark:bg-gray-900 min-h-screen flex flex-col items-center justify-between'>
         <NextauthProvider>
           <PopupContextProvider>
             <Navbar />

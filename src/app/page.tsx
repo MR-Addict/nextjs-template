@@ -11,7 +11,7 @@ export default async function Page() {
   const user = session.user as any;
   return (
     <Tooltip title={user.email} position='top'>
-      <h1 className='cursor-pointer'>Hello, {user.username}</h1>
+      <h1 className='cursor-pointer dark:text-white'>Hello, {user.username}.</h1>
     </Tooltip>
   );
 }
