@@ -16,11 +16,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     console.log(request);
 
-    const completion = await openai.createChatCompletion(request.data);
+    const result = await openai.createChatCompletion(request.data);
+    const completion = result.data;
 
     console.log(completion);
 
-    return res.json(JSON.stringify(completion));
+    return res.json(completion);
   } catch (error) {
     console.error(error);
     return res.json({ status: false, message: "Openai failed to response" });
