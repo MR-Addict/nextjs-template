@@ -10,11 +10,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method !== "POST") return res.setHeader("Allow", ["POST"]).end(`Method ${req.method} is not allowed!`);
 
   if (req.body.token !== process.env.OPENAI_TOKEN) {
-    return res.status(400).json({ status: false, message: "Not authorized" });
+    return res.status(401).json({ status: false, message: "Not authorized" });
   }
 
   const request = ChatRequest.safeParse(req.body);
-  if (!request.success) return res.status(401).json({ status: false, message: "Bad request" });
+  if (!request.success) return res.status(400).json({ status: false, message: "Bad request" });
 
   try {
     const result = await openai.createChatCompletion(request.data);
