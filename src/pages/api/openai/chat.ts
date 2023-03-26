@@ -7,9 +7,9 @@ const configuration = new Configuration({ apiKey: process.env.OPENAI_TOKEN });
 const openai = new OpenAIApi(configuration);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") return res.setHeader("Allow", ["POST"]).end(`Method ${req.method} is not allowed!`);
+  if (req.method !== "POST") return res.setHeader("Allow", ["POST"]).end(`Method ${req.method} is not allowed`);
 
-  if (req.body.token !== process.env.OPENAI_TOKEN) {
+  if (req.headers.authorization !== process.env.OPENAI_TOKEN) {
     return res.status(401).json({ status: false, message: "Not authorized" });
   }
 
