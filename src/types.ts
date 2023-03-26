@@ -1,14 +1,13 @@
 import z from "zod";
 
-const Messages = z.array(
-  z.object({
-    role: z.enum(["user", "assistant"]),
-    content: z.string(),
-  })
-);
+const Message = z.object({
+  role: z.enum(["user", "assistant"]),
+  content: z.string(),
+});
 
-const ChatOptions = z.object({
+const ChatRequest = z.object({
   model: z.enum(["gpt-3.5-turbo"]),
+  messages: z.array(Message),
   temperature: z.number().min(0).max(2).optional(),
   top_p: z.number().min(0).max(1).optional(),
   n: z.number().int().min(1).optional(),
@@ -18,8 +17,8 @@ const ChatOptions = z.object({
   frequency_penalty: z.number().min(-2).max(2).optional(),
 });
 
-type ChatOptionsType = z.TypeOf<typeof ChatOptions>;
-type MessagesType = z.TypeOf<typeof Messages>;
+type ChatRequestType = z.TypeOf<typeof ChatRequest>;
+type MessageType = z.TypeOf<typeof Message>;
 
-export { ChatOptions, Messages };
-export type { ChatOptionsType, MessagesType };
+export { ChatRequest, Message };
+export type { ChatRequestType, MessageType };

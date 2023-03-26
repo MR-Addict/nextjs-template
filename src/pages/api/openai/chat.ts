@@ -1,7 +1,7 @@
+import { Configuration, OpenAIApi } from "openai";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { ChatOptions, Messages } from "@/types";
-import { Configuration, OpenAIApi } from "openai";
+import { ChatRequest } from "@/types";
 
 const configuration = new Configuration({ apiKey: process.env.OPENAI_TOKEN });
 const openai = new OpenAIApi(configuration);
@@ -10,13 +10,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method !== "POST") return res.setHeader("Allow", ["POST"]).end(`Method ${req.method} is not allowed!`);
   if (req.body.token !== process.env.OPENAI_TOKEN) return res.send("Not authorized");
 
-  const options = ChatOptions.safeParse(req.body);
-  const messages = Messages.safeParse(JSON.parse(req.body.messages));
-  if (!options.success || !messages.success) return res.send("Bad Request");
+  const request = ChatRequest.safeParse(req.body);
+  if (!request.success) return res.send("Bad Request");
 
   try {
-    const completion = await openai.createChatCompletion({ ...options.data, messages: messages.data });
-    return res.send(completion);
+    console.log(request);
+
+    const completion = await openai.createChatCompletion(request.data);
+
+    console.log(completion);
+
+    return res.json(JSON.stringify(completion));
   } catch (error) {
     console.error(error);
     return res.json({ status: false, message: "Openai failed to response" });
