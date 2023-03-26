@@ -14,6 +14,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const messages = Messages.safeParse(JSON.parse(req.body.messages));
   if (!options.success || !messages.success) return res.send("Bad Request");
 
-  const completion = await openai.createChatCompletion({ ...options.data, messages: messages.data });
-  return res.json(completion);
+  try {
+    const completion = await openai.createChatCompletion({ ...options.data, messages: messages.data });
+    return res.send(completion);
+  } catch (error) {
+    console.error(error);
+    return res.json({ status: false, message: "Openai failed to response" });
+  }
 }
