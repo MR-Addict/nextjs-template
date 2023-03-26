@@ -14,16 +14,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!request.success) return res.send("Bad Request");
 
   try {
-    console.log(request);
-
     const result = await openai.createChatCompletion(request.data);
-    const completion = result.data;
 
-    console.log(completion);
-
-    return res.json(completion);
+    if (result.status !== 200) return res.json({ status: false, message: "ChatGPT failed to response" });
+    else return res.json({ status: true, data: result.data });
   } catch (error) {
     console.error(error);
-    return res.json({ status: false, message: "Openai failed to response" });
+    return res.json({ status: false, message: "ChatGPT failed to response" });
   }
 }
